@@ -153,6 +153,15 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 9
 @media (max-width:900px){.steps{grid-template-columns:1fr 1fr;row-gap:40px}.step::after{display:none}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
 
+
+/* Founder photo */
+.founder-photo{background:var(--green);position:relative;overflow:hidden}
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block}
+.founder-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,27,23,.72) 0%,rgba(15,27,23,.05) 45%,rgba(15,27,23,0) 70%);pointer-events:none}
+.photo-overlay{position:absolute;left:28px;right:28px;bottom:24px;z-index:2;display:flex;flex-direction:column;align-items:flex-start}
+.photo-overlay .sig{position:static;font-family:var(--script);color:var(--peach);font-size:3rem;line-height:1}
+.photo-role{margin-top:3px;color:#F4EDE2;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+
 /* About */
 .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
 .monogram{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 60%,#3E6656 100%);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 18px 45px rgba(30,59,50,.12)}
@@ -244,7 +253,7 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
   <div class="wrap hero-grid">
     <div>
       <h1><span>Hire better.</span><span>Inspire more.</span></h1>
-      <p class="lede">Recruitment with technical depth and full HR support, for companies building teams across MENA, Africa and beyond.</p>
+      <p class="lede">Hire &amp; Inspire by Christine helps companies find the right talent and build stronger people practices through recruitment, organization development, and payroll support.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Hire talent</a>
         <a href="#contact" class="btn btn-ghost">Book a discovery call</a>
@@ -355,10 +364,12 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
 
 <section id="about">
   <div class="wrap about-grid">
-    <div class="monogram">
-      <img src="christine-fayek.jpg" alt="Christine Fayek, founder of Hire &amp; Inspire by Christine">
-      <svg viewBox="0 0 44 32" aria-hidden="true"><use href="#sprig"/></svg>
-      <span class="sig">Christine</span>
+    <div class="monogram founder-photo">
+      <img src="christine-fayek-photo.jpg" alt="Christine Fayek, Founder and HR &amp; Recruitment Consultant at Hire &amp; Inspire by Christine">
+      <div class="photo-overlay">
+        <span class="sig">Christine</span>
+        <span class="photo-role">HR &amp; Recruitment Consultant</span>
+      </div>
     </div>
     <div class="about-text">
       <h2>Founded by a consultant who knows the work</h2>
