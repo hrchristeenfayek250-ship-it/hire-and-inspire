@@ -155,13 +155,15 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 9
 
 /* About */
 .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
-.monogram{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 60%,#3E6656 100%);display:grid;place-items:center;position:relative;overflow:hidden}
-.monogram svg{width:46%;height:auto}
-.monogram .sig{position:absolute;bottom:28px;font-family:var(--script);color:var(--peach);font-size:3rem}
+.monogram{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 60%,#3E6656 100%);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 18px 45px rgba(30,59,50,.12)}
+.monogram::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,59,50,.04) 45%,rgba(30,59,50,.62) 100%);z-index:1;pointer-events:none}
+.monogram img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
+.monogram svg{position:absolute;top:28px;left:28px;width:18%;height:auto;z-index:2;opacity:.9}
+.monogram .sig{position:absolute;bottom:28px;font-family:var(--script);color:#FAF6EF;font-size:3rem;z-index:2;text-shadow:0 2px 10px rgba(0,0,0,.18)}
 .about-text p{color:var(--muted);margin-top:18px;max-width:60ch}
 .about-text blockquote{margin:28px 0 0;font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.5;color:var(--heading);border-left:3px solid var(--accent);padding-left:20px}
 .sign{font-family:var(--script);font-size:2.4rem;color:var(--accent);margin-top:16px;line-height:1}
-@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}.monogram{max-width:340px}}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}.monogram{max-width:340px;width:100%;margin-inline:auto}}
 
 /* Contact */
 .contact{background:var(--band);color:var(--band-text)}
@@ -254,7 +256,7 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
       <ol>
         <li><span class="dot"></span><div><div class="role">Chief Technology Officer</div><div class="level">C-level leadership</div></div></li>
         <li><span class="dot"></span><div><div class="role">Head of Digital Marketing</div><div class="level">Senior management</div></div></li>
-        <li><span class="dot"></span><div><div class="role">Cybersecurity Engineer</div><div class="level">Technical specialist</div></div></li>
+        <li><span class="dot"></span><div><div class="role">Cybersecurity Engineer</div><div class="level">Technical professional</div></div></li>
         <li><span class="dot"></span><div><div class="role">Market Research Analyst</div><div class="level">Mid-level professional</div></div></li>
         <li><span class="dot"></span><div><div class="role">Event Coordinator</div><div class="level">Junior and entry level</div></div></li>
       </ol>
@@ -353,13 +355,14 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
 
 <section id="about">
   <div class="wrap about-grid">
-    <div class="monogram" aria-hidden="true">
-      <svg viewBox="0 0 44 32"><use href="#sprig"/></svg>
+    <div class="monogram">
+      <img src="christine-fayek.jpg" alt="Christine Fayek, founder of Hire &amp; Inspire by Christine">
+      <svg viewBox="0 0 44 32" aria-hidden="true"><use href="#sprig"/></svg>
       <span class="sig">Christine</span>
     </div>
     <div class="about-text">
-      <h2>Founded by a recruiter who knows the work</h2>
-      <p>Hire &amp; Inspire was founded by Christine Fayek, a talent acquisition specialist with more than eight years of experience and over 3,000 placements.</p>
+      <h2>Founded by a consultant who knows the work</h2>
+      <p>Hire &amp; Inspire was founded by Christine Fayek, an HR &amp; Recruitment Consultant with more than eight years of experience and over 3,000 placements.</p>
       <p>Christine has recruited at every level, from C-suite leaders to junior hires, with a strong focus on technical roles in software, IT and cybersecurity. She has built teams for companies across Egypt, Saudi Arabia, the Gulf and Africa.</p>
       <p>Hire &amp; Inspire brings that experience together with organization development and payroll, so growing companies get one partner for their whole people strategy.</p>
       <blockquote>The right hire changes more than a team. It changes what a company believes it can do.</blockquote>
