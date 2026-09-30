@@ -594,7 +594,9 @@ form.addEventListener("submit", async e => {
 
     const result = await response.json();
 
-    if (response.ok && result.success) {
+    if (response.ok && result.success) {gtag('event', 'generate_lead', {
+  method: 'website_contact_form'
+});
       statusEl.textContent = "Thank you. Your request has been sent successfully.";
       form.reset();
     } else {
