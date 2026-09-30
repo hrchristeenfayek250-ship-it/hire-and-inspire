@@ -153,15 +153,6 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 9
 @media (max-width:900px){.steps{grid-template-columns:1fr 1fr;row-gap:40px}.step::after{display:none}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
 
-
-/* Founder photo */
-.founder-photo{background:var(--green);position:relative;overflow:hidden}
-.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block}
-.founder-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,27,23,.72) 0%,rgba(15,27,23,.05) 45%,rgba(15,27,23,0) 70%);pointer-events:none}
-.photo-overlay{position:absolute;left:28px;right:28px;bottom:24px;z-index:2;display:flex;flex-direction:column;align-items:flex-start}
-.photo-overlay .sig{position:static;font-family:var(--script);color:var(--peach);font-size:3rem;line-height:1}
-.photo-role{margin-top:3px;color:#F4EDE2;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
-
 /* About */
 .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
 .monogram{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 60%,#3E6656 100%);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 18px 45px rgba(30,59,50,.12)}
@@ -210,6 +201,19 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
 .foot nav a{text-decoration:none;font-size:.9rem}
 .foot nav a:hover{color:var(--accent)}
 
+
+.eyebrow{font-size:.76rem;letter-spacing:.24em;color:var(--accent);font-weight:600;margin:0 0 10px}
+.founder-values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+.founder-values>div{padding:18px;border:1px solid var(--line);background:var(--surface)}
+.founder-values h3{font-size:.92rem;margin:0 0 6px;color:var(--heading)}
+.founder-values p{font-size:.82rem;margin:0;color:var(--muted)}
+.founder-title{font-size:.72rem;letter-spacing:.2em;color:var(--muted);margin-top:-8px}
+.social-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.social-links a{font-weight:600;text-decoration:none}
+.social-links a:hover{color:var(--accent)}
+@media(max-width:760px){
+  .founder-values{grid-template-columns:1fr}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .range li{animation:none;opacity:1;transform:none}
@@ -253,7 +257,7 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
   <div class="wrap hero-grid">
     <div>
       <h1><span>Hire better.</span><span>Inspire more.</span></h1>
-      <p class="lede">Hire &amp; Inspire by Christine helps companies find the right talent and build stronger people practices through recruitment, organization development, and payroll support.</p>
+      <p class="lede">Recruitment with technical depth and full HR support, for companies building teams across MENA, Africa and beyond.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Hire talent</a>
         <a href="#contact" class="btn btn-ghost">Book a discovery call</a>
@@ -265,7 +269,7 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
       <ol>
         <li><span class="dot"></span><div><div class="role">Chief Technology Officer</div><div class="level">C-level leadership</div></div></li>
         <li><span class="dot"></span><div><div class="role">Head of Digital Marketing</div><div class="level">Senior management</div></div></li>
-        <li><span class="dot"></span><div><div class="role">Cybersecurity Engineer</div><div class="level">Technical professional</div></div></li>
+        <li><span class="dot"></span><div><div class="role">Cybersecurity Engineer</div><div class="level">Technical specialist</div></div></li>
         <li><span class="dot"></span><div><div class="role">Market Research Analyst</div><div class="level">Mid-level professional</div></div></li>
         <li><span class="dot"></span><div><div class="role">Event Coordinator</div><div class="level">Junior and entry level</div></div></li>
       </ol>
@@ -364,20 +368,23 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
 
 <section id="about">
   <div class="wrap about-grid">
-    <div class="monogram founder-photo">
-      <img src="christine-fayek-photo.jpg" alt="Christine Fayek, Founder and HR &amp; Recruitment Consultant at Hire &amp; Inspire by Christine">
-      <div class="photo-overlay">
-        <span class="sig">Christine</span>
-        <span class="photo-role">HR &amp; Recruitment Consultant</span>
-      </div>
+    <div class="monogram" aria-hidden="true">
+      <svg viewBox="0 0 44 32"><use href="#sprig"/></svg>
+      <span class="sig">Christine</span>
     </div>
     <div class="about-text">
-      <h2>Founded by a consultant who knows the work</h2>
-      <p>Hire &amp; Inspire was founded by Christine Fayek, an HR &amp; Recruitment Consultant with more than eight years of experience and over 3,000 placements.</p>
-      <p>Christine has recruited at every level, from C-suite leaders to junior hires, with a strong focus on technical roles in software, IT and cybersecurity. She has built teams for companies across Egypt, Saudi Arabia, the Gulf and Africa.</p>
-      <p>Hire &amp; Inspire brings that experience together with organization development and payroll, so growing companies get one partner for their whole people strategy.</p>
-      <blockquote>The right hire changes more than a team. It changes what a company believes it can do.</blockquote>
+      <p class="eyebrow">MEET THE FOUNDER</p>
+      <h2>People come first. Always.</h2>
+      <p>I’m Christine Fayek, Founder &amp; CEO of Hire &amp; Inspire by Christine.</p>
+      <p>With more than eight years of experience and over 3,000 placements, I bring hands-on recruitment expertise together with practical HR solutions for growing businesses.</p>
+      <p>From C-level leadership to junior talent, with particular depth across technology, software and cybersecurity, I support companies across Egypt, Saudi Arabia, the Gulf, Africa and beyond.</p>
+      <div class="founder-values">
+        <div><h3>People-Centered Approach</h3><p>Hiring is about people, potential and long-term fit.</p></div>
+        <div><h3>Practical HR Solutions</h3><p>Recruitment, organization development and payroll under one roof.</p></div>
+        <div><h3>Long-Term Partnerships</h3><p>I stay close to the business beyond the offer and onboarding.</p></div>
+      </div>
       <div class="sign">Christine</div>
+      <div class="founder-title">FOUNDER &amp; CEO</div>
     </div>
   </div>
 </section>
@@ -388,8 +395,13 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
       <h2>Ready to build a team that inspires?</h2>
       <p class="lede">Tell us about your hiring needs and we'll get back to you within one business day.</p>
       <div class="contact-list">
-        <div>Email: <a href="mailto:hello@yourdomain.com" id="emailLink">hello@yourdomain.com</a></div>
-        <div>LinkedIn: <a href="https://www.linkedin.com/company/hire-inspire-by-christine/" target="_blank" rel="noopener">Hire &amp; Inspire by Christine</a></div>
+        <div>Email: <a href="mailto:hello@hireandinspirebychristine.com" id="emailLink">hello@hireandinspirebychristine.com</a></div>
+        <div class="social-links">
+          <span>Connect:</span>
+          <a href="https://www.instagram.com/hireandinspire999?stkn=MTEyb2J0dnh3MGk1cQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" aria-label="Hire &amp; Inspire on Instagram">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61594373922279" target="_blank" rel="noopener" aria-label="Hire &amp; Inspire on Facebook">Facebook</a>
+          <a href="https://www.linkedin.com/company/hire-inspire-by-christine/" target="_blank" rel="noopener" aria-label="Hire &amp; Inspire on LinkedIn">LinkedIn</a>
+        </div>
       </div>
     </div>
     <form id="leadForm" novalidate>
@@ -435,6 +447,8 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
     </div>
     <nav aria-label="Footer">
       <a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="https://www.instagram.com/hireandinspire999?stkn=MTEyb2J0dnh3MGk1cQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61594373922279" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.linkedin.com/company/hire-inspire-by-christine/" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
     <small>© <span id="year"></span> Hire &amp; Inspire by Christine</small>
@@ -443,7 +457,7 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
 
 <script>
 // Replace with your real business email once your domain is ready
-const CONTACT_EMAIL = "hello@yourdomain.com";
+const CONTACT_EMAIL = "hello@hireandinspirebychristine.com";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 const emailLink = document.getElementById("emailLink");
