@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hire & Inspire by Christine | Recruitment, OD & Payroll</title>
+<meta name="description" content="Hire & Inspire by Christine is a People & Talent agency offering recruitment with technical depth, organization development and payroll management across MENA, Africa and worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1E3B32; --green-2:#2C5044; --copper:#B8734F; --peach:#F0C2A2;
+  --sand:#EADFCE; --paper:#FAF6EF; --sage:#9FB09A; --ink:#2A2A2A;
+  --bg:var(--paper); --surface:#FFFFFF; --soft:var(--sand); --text:var(--ink);
+  --heading:var(--green); --accent:var(--copper); --muted:#5B605A;
+  --line:rgba(30,59,50,.16); --band:var(--green); --band-text:#F4EDE2;
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:"Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --script:"Allura", "Brush Script MT", cursive;
+  --wrap:1180px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#13221D; --surface:#1A2E27; --soft:#1F372F; --text:#E8E2D6;
+    --heading:#F4ECDF; --accent:#E3A27E; --muted:#AAB2A7;
+    --line:rgba(232,226,214,.14); --band:#0F1B17; --band-text:#F4EDE2;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#13221D; --surface:#1A2E27; --soft:#1F372F; --text:#E8E2D6;
+  --heading:#F4ECDF; --accent:#E3A27E; --muted:#AAB2A7;
+  --line:rgba(232,226,214,.14); --band:#0F1B17; --band-text:#F4EDE2;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);color:var(--heading);font-weight:600;line-height:1.15;margin:0}
+h2{font-size:clamp(2rem,4vw,2.9rem);letter-spacing:-.01em}
+h3{font-size:1.35rem}
+p{margin:0}
+.lede{color:var(--muted);font-size:1.05rem;max-width:60ch}
+section{padding:96px 0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;font-family:var(--sans);font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-primary{background:var(--green);color:#FAF6EF}
+.btn-primary:hover{background:var(--green-2)}
+.btn-ghost{border-color:var(--heading);color:var(--heading);background:transparent}
+.btn-ghost:hover{background:var(--heading);color:var(--bg)}
+:root[data-theme="dark"] .btn-primary{background:var(--peach);color:#13221D}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn-primary{background:var(--peach);color:#13221D}}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:flex-end;gap:10px;text-decoration:none}
+.logo-word{font-family:var(--serif);font-weight:700;font-size:1.45rem;color:var(--heading);line-height:1;position:relative}
+.logo-word .amp{color:var(--accent);position:relative;display:inline-block;margin:0 .06em}
+.logo-word .amp svg{position:absolute;width:22px;height:16px;left:50%;top:-14px;transform:translateX(-50%)}
+.logo-by{font-family:var(--script);color:var(--accent);font-size:1.5rem;line-height:.8}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{text-decoration:none;font-size:.9rem;font-weight:500;color:var(--text)}
+.nav-links a:hover{color:var(--accent)}
+.nav-links .btn{padding:10px 20px;color:#FAF6EF}
+.menu-btn{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--heading)}
+@media (max-width:900px){
+  .menu-btn{display:block}
+  .nav-links{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 24px 20px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0;width:100%;font-size:1rem}
+  .nav-links .btn{margin-top:10px;width:auto;padding:12px 22px}
+}
+
+/* Hero */
+.hero{padding:88px 0 96px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5.2rem);letter-spacing:-.02em;line-height:1.02}
+.hero h1 span{display:block}
+.hero h1 span:last-child{font-style:italic;font-weight:500;color:var(--accent)}
+.hero .lede{margin:26px 0 36px;font-size:1.12rem}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.range{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px 30px 18px;position:relative}
+.range-title{font-family:var(--serif);font-size:1.2rem;color:var(--heading)}
+.range-sub{color:var(--muted);font-size:.88rem;margin-top:4px}
+.range ol{list-style:none;margin:22px 0 0;padding:0;position:relative}
+.range ol::before{content:"";position:absolute;left:7px;top:10px;bottom:22px;width:2px;background:linear-gradient(var(--green),var(--sage),var(--peach))}
+.range li{display:grid;grid-template-columns:16px 1fr;gap:18px;padding:0 0 20px;opacity:0;transform:translateY(8px);animation:rise .6s ease forwards}
+.range li:nth-child(1){animation-delay:.25s}
+.range li:nth-child(2){animation-delay:.45s}
+.range li:nth-child(3){animation-delay:.65s}
+.range li:nth-child(4){animation-delay:.85s}
+.range li:nth-child(5){animation-delay:1.05s}
+.dot{width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--green);margin-top:4px;position:relative;z-index:1}
+.range li:nth-child(3) .dot{border-color:var(--sage)}
+.range li:nth-child(4) .dot,.range li:nth-child(5) .dot{border-color:var(--copper)}
+.role{font-weight:600;color:var(--text);font-size:.98rem}
+.level{font-size:.82rem;color:var(--muted)}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero{padding-top:56px}}
+
+/* Stats band */
+.band{background:var(--band);color:var(--band-text);padding:56px 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat{border-left:1px solid rgba(244,237,226,.2);padding-left:22px}
+.stat:first-child{border-left:0;padding-left:0}
+.stat-num{font-family:var(--serif);font-size:clamp(2.1rem,4vw,3.1rem);color:var(--peach);line-height:1.05;font-weight:600}
+.stat-label{font-size:.9rem;opacity:.85;margin-top:6px}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr;row-gap:34px}.stat:nth-child(3){border-left:0;padding-left:0}}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px}
+.services-intro{position:sticky;top:120px;align-self:start}
+.services-intro .lede{margin-top:18px}
+.service{padding:34px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;gap:20px}
+.service:last-child{border-bottom:1px solid var(--line)}
+.service svg{width:36px;height:30px;margin-top:4px}
+.service p{color:var(--muted);margin-top:10px}
+.service ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.service li{font-size:.82rem;padding:5px 12px;border-radius:999px;background:var(--soft);color:var(--text)}
+@media (max-width:900px){.services-grid{grid-template-columns:1fr;gap:28px}.services-intro{position:static}}
+
+/* Why */
+.why{background:var(--soft)}
+.why-head{max-width:640px}
+.why-head .lede{margin-top:16px}
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:48px 64px;margin-top:56px}
+.pillar{border-top:3px solid var(--accent);padding-top:22px}
+.pillar p{color:var(--muted);margin-top:10px;max-width:46ch}
+@media (max-width:760px){.pillars{grid-template-columns:1fr;gap:36px}}
+
+/* Industries */
+.ind-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.industries{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.industry{font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.55rem);color:var(--heading);padding:14px 26px;border:1.5px solid var(--sage);border-radius:999px}
+.ind-note{color:var(--muted);margin-top:26px;font-size:.95rem}
+
+/* Process */
+.process{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:56px;list-style:none;padding:0;counter-reset:step}
+.step{position:relative;padding-top:64px}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:0;left:0;width:44px;height:44px;border-radius:50%;background:var(--green);color:#FAF6EF;font-family:var(--serif);font-size:1.2rem;display:grid;place-items:center}
+.step::after{content:"";position:absolute;top:22px;left:56px;right:-20px;height:1px;background:var(--line)}
+.step:last-child::after{display:none}
+.step p{color:var(--muted);margin-top:8px;font-size:.95rem}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr;row-gap:40px}.step::after{display:none}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* Founder photo */
+.founder-photo{background:var(--green);position:relative;overflow:hidden}
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
+.founder-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,27,23,.72) 0%,rgba(15,27,23,.05) 45%,rgba(15,27,23,0) 70%);pointer-events:none}
+.photo-overlay{position:absolute;left:28px;right:28px;bottom:24px;z-index:2;display:flex;flex-direction:column;align-items:flex-start}
+.photo-overlay .sig{position:static;font-family:var(--script);color:#FAF6EF;font-size:3rem;line-height:1}
+.photo-role{margin-top:3px;color:#F4EDE2;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+.monogram{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 60%,#3E6656 100%);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 18px 45px rgba(30,59,50,.12)}
+.monogram::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,59,50,.04) 45%,rgba(30,59,50,.62) 100%);z-index:1;pointer-events:none}
+.monogram img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
+.monogram svg{position:absolute;top:28px;left:28px;width:18%;height:auto;z-index:2;opacity:.9}
+.monogram .sig{position:absolute;bottom:28px;font-family:var(--script);color:#FAF6EF;font-size:3rem;z-index:2;text-shadow:0 2px 10px rgba(0,0,0,.18)}
+.about-text p{color:var(--muted);margin-top:18px;max-width:60ch}
+.about-text blockquote{margin:28px 0 0;font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.5;color:var(--heading);border-left:3px solid var(--accent);padding-left:20px}
+.sign{font-family:var(--script);font-size:2.4rem;color:var(--accent);margin-top:16px;line-height:1}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}.monogram{max-width:340px;width:100%;margin-inline:auto}}
+
+/* Contact */
+.contact{background:var(--band);color:var(--band-text)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.contact h2{color:#F4ECDF}
+.contact .lede{color:rgba(244,237,226,.8);margin-top:18px}
+.contact-list{margin-top:34px;display:grid;gap:14px;font-size:.95rem}
+.contact-list a{color:var(--peach);text-decoration:none}
+.contact-list a:hover{text-decoration:underline}
+form{background:var(--surface);color:var(--text);border-radius:22px;padding:34px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:.84rem;font-weight:600}
+input,select,textarea{font:inherit;font-size:.95rem;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
+.form-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px;flex-wrap:wrap}
+.form-note{font-size:.84rem;color:var(--muted);max-width:34ch}
+.form-status{margin-top:16px;font-size:.9rem;font-weight:500;color:var(--green)}
+:root[data-theme="dark"] .form-status{color:var(--peach)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .form-status{color:var(--peach)}}
+.error{color:#B3261E;font-size:.8rem;display:none}
+.invalid .error{display:block}
+.invalid input,.invalid select{border-color:#B3261E}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+@media (max-width:560px){.fields{grid-template-columns:1fr}form{padding:24px}}
+
+/* Footer */
+footer{padding:48px 0;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.tagline{font-size:.78rem;letter-spacing:.28em;color:var(--muted)}
+.foot small{color:var(--muted)}
+.foot nav{display:flex;gap:22px}
+.foot nav a{text-decoration:none;font-size:.9rem}
+.foot nav a:hover{color:var(--accent)}
+
+
+.eyebrow{font-size:.76rem;letter-spacing:.24em;color:var(--accent);font-weight:600;margin:0 0 10px}
+.founder-values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+.founder-values>div{padding:18px;border:1px solid var(--line);background:var(--surface)}
+.founder-values h3{font-size:.92rem;margin:0 0 6px;color:var(--heading)}
+.founder-values p{font-size:.82rem;margin:0;color:var(--muted)}
+.founder-title{font-size:.72rem;letter-spacing:.2em;color:var(--muted);margin-top:-8px}
+.social-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.social-links a{font-weight:600;text-decoration:none}
+.social-links a:hover{color:var(--accent)}
+@media(max-width:760px){
+  .founder-values{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .range li{animation:none;opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="sprig" viewBox="0 0 44 32">
+    <path d="M22 31 C22 24 22 18 22 12" stroke="#1E3B32" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <path d="M22 13 C15 13 9 8 7 2 C14 2 20 6 22 13Z" fill="#F0C2A2"/>
+    <path d="M22 13 C29 13 35 8 37 2 C30 2 24 6 22 13Z" fill="#EADFCE" stroke="#C9B89E" stroke-width=".6"/>
+    <path d="M22 16 C19 10 20 4 22 0 C24 4 25 10 22 16Z" fill="#1E3B32"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Hire & Inspire by Christine, home">
+      <span class="logo-word">Hire <span class="amp">&amp;<svg aria-hidden="true"><use href="#sprig"/></svg></span> Inspire</span>
+      <span class="logo-by">by Christine</span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="navlinks">
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#industries">Industries</a>
+      <a href="#process">How it works</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn btn-primary">Hire talent</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1><span>Hire better.</span><span>Inspire more.</span></h1>
+      <p class="lede">Recruitment with technical depth and full HR support, for companies building teams across MENA, Africa and beyond.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Hire talent</a>
+        <a href="#contact" class="btn btn-ghost">Book a discovery call</a>
+      </div>
+    </div>
+    <aside class="range" aria-label="Examples of roles we recruit for">
+      <div class="range-title">From the boardroom to first hires</div>
+      <div class="range-sub">A sample of the roles we fill</div>
+      <ol>
+        <li><span class="dot"></span><div><div class="role">Chief Technology Officer</div><div class="level">C-level leadership</div></div></li>
+        <li><span class="dot"></span><div><div class="role">Head of Digital Marketing</div><div class="level">Senior management</div></div></li>
+        <li><span class="dot"></span><div><div class="role">Cybersecurity Engineer</div><div class="level">Technical specialist</div></div></li>
+        <li><span class="dot"></span><div><div class="role">Market Research Analyst</div><div class="level">Mid-level professional</div></div></li>
+        <li><span class="dot"></span><div><div class="role">Event Coordinator</div><div class="level">Junior and entry level</div></div></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<div class="band" aria-label="Key numbers">
+  <div class="wrap stats">
+    <div class="stat"><div class="stat-num" data-count="3000" data-suffix="+">3,000+</div><div class="stat-label">Placements</div></div>
+    <div class="stat"><div class="stat-num" data-count="8" data-suffix="+">8+</div><div class="stat-label">Years of experience</div></div>
+    <div class="stat"><div class="stat-num">C-level to junior</div><div class="stat-label">Hires at every level</div></div>
+    <div class="stat"><div class="stat-num">Worldwide</div><div class="stat-label">Reach</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap services-grid">
+    <div class="services-intro">
+      <h2>Everything your people strategy needs, under one roof.</h2>
+      <p class="lede">Start with a single hire or hand us the full picture. Either way, you work with one partner who knows your business.</p>
+    </div>
+    <div>
+      <article class="service">
+        <svg aria-hidden="true"><use href="#sprig"/></svg>
+        <div>
+          <h3>Recruitment</h3>
+          <p>From executive search to technical and volume hiring, we find people who fit the role and your culture.</p>
+          <ul><li>Executive search</li><li>Technical hiring</li><li>Volume hiring</li></ul>
+        </div>
+      </article>
+      <article class="service">
+        <svg aria-hidden="true"><use href="#sprig"/></svg>
+        <div>
+          <h3>Organization Development</h3>
+          <p>Structures, job architecture and performance frameworks that help teams grow with purpose.</p>
+          <ul><li>Org structures</li><li>Job descriptions</li><li>Performance frameworks</li></ul>
+        </div>
+      </article>
+      <article class="service">
+        <svg aria-hidden="true"><use href="#sprig"/></svg>
+        <div>
+          <h3>Payroll Management</h3>
+          <p>Accurate, compliant, on-time payroll, so you can focus on running the business.</p>
+          <ul><li>Monthly payroll</li><li>Compliance</li><li>Reporting</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="wrap">
+    <div class="why-head">
+      <h2>Why companies choose Hire &amp; Inspire</h2>
+      <p class="lede">We understand the roles we hire for, and we stay with you after the offer is signed.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><h3>Technical depth</h3><p>We speak your team's language, from cybersecurity engineers to marketing leads, so the candidates you meet can actually do the job.</p></div>
+      <div class="pillar"><h3>One partner, full support</h3><p>Hiring, organization development and payroll, handled by one team with one point of contact.</p></div>
+      <div class="pillar"><h3>Speed without compromise</h3><p>Fast shortlists of carefully screened, relevant candidates. You spend your time on the right people.</p></div>
+      <div class="pillar"><h3>Regional expertise, global reach</h3><p>Deep knowledge of Egypt, Saudi Arabia, the Gulf and African markets, with the reach to hire worldwide.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="industries">
+  <div class="wrap">
+    <div class="ind-head">
+      <h2>Industries we serve</h2>
+      <p class="lede" style="max-width:44ch">Deep experience in technology and the creative and marketing sectors, and the flexibility to hire for any industry.</p>
+    </div>
+    <div class="industries">
+      <span class="industry">Technology &amp; IT</span>
+      <span class="industry">Cybersecurity</span>
+      <span class="industry">Digital Marketing</span>
+      <span class="industry">Advertising</span>
+      <span class="industry">Event Management</span>
+      <span class="industry">Market Research</span>
+    </div>
+    <p class="ind-note">Hiring in another sector? <a href="#contact">Tell us about your role</a>.</p>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li class="step"><h3>Discover</h3><p>We learn your business, your culture and exactly who you need.</p></li>
+      <li class="step"><h3>Search</h3><p>Targeted sourcing and in-depth screening, including technical evaluation where the role needs it.</p></li>
+      <li class="step"><h3>Shortlist</h3><p>You meet only the candidates worth your time.</p></li>
+      <li class="step"><h3>Hire and beyond</h3><p>We support offers and onboarding, and keep helping as your team grows.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="monogram founder-photo">
+      <img src="christine-fayek-photo.jpg" alt="Christine Fayek, Founder &amp; CEO of Hire &amp; Inspire by Christine">
+      <div class="photo-overlay">
+        <span class="sig">Christine</span>
+        <span class="photo-role">FOUNDER &amp; CEO</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="eyebrow">MEET THE FOUNDER</p>
+      <h2>People come first. Always.</h2>
+      <p>I’m Christine Fayek, Founder &amp; CEO of Hire &amp; Inspire by Christine.</p>
+      <p>With more than eight years of experience and over 3,000 placements, I bring hands-on recruitment expertise together with practical HR solutions for growing businesses.</p>
+      <p>From C-level leadership to junior talent, with particular depth across technology, software and cybersecurity, I support companies across Egypt, Saudi Arabia, the Gulf, Africa and beyond.</p>
+      <div class="founder-values">
+        <div><h3>People-Centered Approach</h3><p>Hiring is about people, potential and long-term fit.</p></div>
+        <div><h3>Practical HR Solutions</h3><p>Recruitment, organization development and payroll under one roof.</p></div>
+        <div><h3>Long-Term Partnerships</h3><p>I stay close to the business beyond the offer and onboarding.</p></div>
+      </div>
+      <div class="sign">Christine</div>
+      <div class="founder-title">FOUNDER &amp; CEO</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Ready to build a team that inspires?</h2>
+      <p class="lede">Tell us about your hiring needs and we'll get back to you within one business day.</p>
+      <div class="contact-list">
+        <div>Email: <a href="mailto:hello@hireandinspirebychristine.com" id="emailLink">hello@hireandinspirebychristine.com</a></div>
+        <div class="social-links">
+          <span>Connect:</span>
+          <a href="https://www.instagram.com/hireandinspire999?stkn=MTEyb2J0dnh3MGk1cQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" aria-label="Hire &amp; Inspire on Instagram">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61594373922279" target="_blank" rel="noopener" aria-label="Hire &amp; Inspire on Facebook">Facebook</a>
+          <a href="https://www.linkedin.com/company/hire-inspire-by-christine/" target="_blank" rel="noopener" aria-label="Hire &amp; Inspire on LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <form id="leadForm" action="https://formsubmit.co/hello@hireandinspirebychristine.com" method="POST">
+      <input type="hidden" name="_subject" value="New Recruitment Support Request — Hire &amp; Inspire by Christine">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <div class="fields">
+        <div class="field"><label for="company">Company name</label><input id="company" name="company" required autocomplete="organization"><span class="error">Enter your company name.</span></div>
+        <div class="field"><label for="person">Contact person</label><input id="person" name="person" required autocomplete="name"><span class="error">Enter your name.</span></div>
+        <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" required autocomplete="email"><span class="error">Enter a valid email address.</span></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="industry">Industry</label>
+          <select id="industry" name="industry">
+            <option value="">Select an industry</option>
+            <option>Technology &amp; IT</option><option>Cybersecurity</option><option>Digital Marketing</option>
+            <option>Advertising</option><option>Event Management</option><option>Market Research</option><option>Other</option>
+          </select></div>
+        <div class="field"><label for="need">What do you need?</label>
+          <select id="need" name="need" required>
+            <option value="">Select a service</option>
+            <option>Recruitment</option><option>Organization Development</option><option>Payroll Management</option><option>More than one service</option>
+          </select><span class="error">Choose a service.</span></div>
+        <div class="field"><label for="positions">Number of positions</label><input id="positions" name="positions" type="number" min="1" inputmode="numeric"></div>
+        <div class="field"><label for="location">Hiring location</label><input id="location" name="location" placeholder="e.g. Riyadh, Cairo, remote"></div>
+        <div class="field full"><label for="message">Tell us about the role or project</label><textarea id="message" name="message"></textarea></div>
+      </div>
+      <div class="form-foot">
+        <p class="form-note">We use your details only to respond to your request.</p>
+        <button type="submit" class="btn btn-primary">Request recruitment support</button>
+      </div>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a href="#top" class="logo" aria-label="Back to top">
+        <span class="logo-word">Hire <span class="amp">&amp;<svg aria-hidden="true"><use href="#sprig"/></svg></span> Inspire</span>
+        <span class="logo-by">by Christine</span>
+      </a>
+      <div class="tagline" style="margin-top:12px">HIRE BETTER. INSPIRE MORE.</div>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="https://www.instagram.com/hireandinspire999?stkn=MTEyb2J0dnh3MGk1cQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61594373922279" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.linkedin.com/company/hire-inspire-by-christine/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <small>© <span id="year"></span> Hire &amp; Inspire by Christine</small>
+  </div>
+</footer>
+
+<script>
+// Replace with your real business email once your domain is ready
+const CONTACT_EMAIL = "hello@hireandinspirebychristine.com";
+
+document.getElementById("year").textContent = new Date().getFullYear();
+const emailLink = document.getElementById("emailLink");
+emailLink.href = "mailto:" + CONTACT_EMAIL; emailLink.textContent = CONTACT_EMAIL;
+
+// Mobile menu
+const menuBtn = document.querySelector(".menu-btn"), links = document.getElementById("navlinks");
+menuBtn.addEventListener("click", () => {
+  const open = links.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  links.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false");
+}));
+
+// Count-up on the stats band
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const counters = document.querySelectorAll("[data-count]");
+if (!reduce && "IntersectionObserver" in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, end = +el.dataset.count, suf = el.dataset.suffix || "";
+      const start = performance.now(), dur = 1400;
+      const tick = t => {
+        const p = Math.min((t - start) / dur, 1), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+        el.textContent = v.toLocaleString("en-US") + suf;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick); io.unobserve(el);
+    });
+  }, { threshold: .5 });
+  counters.forEach(c => io.observe(c));
+}
+
+// Lead form: submits the request through FormSubmit
+const form = document.getElementById("leadForm"), statusEl = document.getElementById("formStatus");
+
+form.addEventListener("submit", e => {
+  if (!form.checkValidity()) return;
+
+  const button = form.querySelector('button[type="submit"]');
+  button.disabled = true;
+  button.textContent = "Sending…";
+  statusEl.textContent = "Sending your request…";
+});
+
+</script>
+</body>
+</html>
